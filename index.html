@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/joy.png" type="image/x-icon">
+    <link id="favicon" rel="icon" href="/images/joy.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>Mohnish Web</title>
 </head>
 
@@ -13,10 +15,26 @@
     <h1>If you can see this, my webpage worked</h1>
     <a href="https://latinlexicon.org/" target="_blank">This a testing link</a>
     <p>Working on the progress</p>
-    <br />
-    <canvas id="canvas" width="288" height="512"></canvas>
+    <button id="switch" class="button">Click to switch the icons!</button>
+    <style>
+        .button {
+            background-color: #555555;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            transition-duration: 0.4s;
+        }
 
-    <script src="flappyBird.js"></script>
+        .button:hover {
+            background-color: gray;
+            color: black;
+        }
+    </style>
+    <script src="main.js"></script>
 </body>
 
 </html>
