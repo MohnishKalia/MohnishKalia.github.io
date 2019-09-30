@@ -5,28 +5,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link id="favicon" rel="icon" href="/images/joy.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="bootstrap.bundle.min.js"></script>
 
     <title>Mohnish Kalia</title>
 </head>
 
 <body>
-    <div>
-        <h1>Click to navigate to my GitHub repositories</h1>
-        <button class="button"><a href="/DataStructures">Data Structures</a></button>
-        <button class="button"><a href="/IndividualWork">AP Computer Science A</a></button>
+    <nav class="navbar navbar-expand-lg navbar-light border-bottom shadow-sm mb-3">
+        <a class="navbar-brand" href="#">Mohnish Kalia</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="/DataStructures">Data Structures</a>
+                <a class="nav-item nav-link" href="/IndividualWork">AP Computer Science A</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-header">Repository</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Data Structures</h5>
+                        <p class="card-text">Assignment Java source code + book files for Data Structures @ Marquette
+                            University.</p>
+                        <a href="/DataStructures" class="card-link">Go to repo page</a>
+                        <a href="https://docs.google.com/document/d/e/2PACX-1vQcWbUfrRR6N6h5BxdnzteHXayVCi9nv1hvHtMouggw2LDqTTiv7itdBcaWeXcZQRe8zkZ8B7KZuAT-/pub"
+                            class="card-link">View Notes</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-header">Repository</div>
+                    <div class="card-body">
+                        <h5 class="card-title">AP Comp Sci</h5>
+                        <p class="card-text">Collection of Java samples and assignments used and created during my
+                            junior year computer science class.</p>
+                        <a href="/IndividualWork" class="card-link">Go to repo page</a>
+                        <a href="https://docs.google.com/document/d/127zV5BPuIynxdtRpARvU-n5dMDOOjuRxIB88nCfP6ec/pub"
+                            class="card-link">View Notes</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-header">Coming Soon</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Coming Soon</h5>
+                        <p class="card-text">This course is not decided yet.<br>Come back later.</p>
+                        <a href="#" class="card-link">Future</a>
+                        <a href="#" class="card-link">Prospect</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="jumbotron">
+                    <h1 class="display-4">Hello, everybody!</h1>
+                    <p class="lead">One of the most fun ways to manipulate a web page is by changing some key elements</p>
+                    <hr class="my-4">
+                    <p>If you wish, click the button below to change the tab's icon.</p>
+                    <p class="lead">
+                        <button id="switch" class="btn btn-primary btn-lg">Click to switch the icons!</button>
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="alert alert-info" role="alert">
+                    <h4 class="alert-heading">If you can see this, my webpage worked!</h4>
+                    <p>Just for fun, <a href="https://latinlexicon.org/" target="_blank" class="alert-link">here</a>
+                        is a testing link within the alert.</p>
+                    <hr>
+                    <p class="mb-0">Remember that the most elegant solutions are (sometimes) the best.</p>
+                    <p class="mb-0">Working on the progress.</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <h3>If you can see this, my webpage worked</h3>
-    <a href="https://latinlexicon.org/" target="_blank">This a testing link</a>
-    <p>Working on the progress</p>
-    <!-- <button id="opener" class="button">Click to reveal CSA Notes</button>
-    <div>
-        <iframe class="collapsible"
-            src="https://docs.google.com/document/d/e/2PACX-1vSJ44WsR3u0Dj-RXWcat25mtnyPYK5Hw2dYnKJD81oHLOIHzzX6ls4QD5bDlk1TKChMPIKQNIVhzHBu/pub"
-            height="300" width="75%"></iframe>
-    </div> -->
-    <button id="switch" class="button">Click to switch the icons!</button>
     <script src="main.js"></script>
 </body>
 

@@ -1,17 +1,16 @@
-window.onload = () => {
-    for(let elt of document.getElementsByClassName("collapsible"))
+var coll = $('.collapsible').get();
+
+$(() => {
+    for (let elt of coll)
         elt.hidden = true;
-};
+});
 
-document.getElementById("switch").onclick = () => {
-    let icon = document.getElementById("favicon");
-    if (icon.href === window.location.origin + "/images/joy.png")
-        icon.href = window.location.origin + "/images/bird.png";
-    else
-        icon.href = window.location.origin + "/images/joy.png";
-};
+$("#switch").on("click", () => {
+    let icon = $("#favicon");
+    icon.prop("href", icon.prop("href").match(/\/\w+\/.+/) == "/images/joy.png" ? "/images/bird.png" : "/images/joy.png");
+});
 
-document.getElementById("opener").onclick = () => {
-    for(let elt of document.getElementsByClassName("collapsible"))
+$("#opener").on("click", () => {
+    for (let elt of coll)
         elt.hidden = false;
-};
+});
