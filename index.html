@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Web Portfolio of Mohnish Kalia's work in computer science.">
-    <meta name="theme-color" content="#D1D1D1"/>
+    <meta name="theme-color" content="#D1D1D1" />
     <link id="favicon" rel="icon" href="/images/joy.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="images/joy.png">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -39,7 +39,8 @@
                         <h5 class="card-title">Data Structures</h5>
                         <p class="card-text">Assignment Java source code + book files for Data Structures @ Marquette
                             University.</p>
-                        <a href="/DataStructures" class="card-link">Go to repo page</a>
+                        <a href="/DataStructures" class="card-link" data-toggle="modal"
+                            data-target="#dataStructuresModal">Repo Page</a>
                         <a href="https://docs.google.com/document/d/e/2PACX-1vQcWbUfrRR6N6h5BxdnzteHXayVCi9nv1hvHtMouggw2LDqTTiv7itdBcaWeXcZQRe8zkZ8B7KZuAT-/pub"
                             class="card-link">View Notes</a>
                     </div>
@@ -52,7 +53,8 @@
                         <h5 class="card-title">AP Comp Sci</h5>
                         <p class="card-text">Collection of Java samples and assignments used and created during my
                             junior year computer science class.</p>
-                        <a href="/IndividualWork" class="card-link">Go to repo page</a>
+                        <a href="/IndividualWork" class="card-link" data-toggle="modal" data-target="#apcsaModal">Repo
+                            Page</a>
                         <a href="https://docs.google.com/document/d/127zV5BPuIynxdtRpARvU-n5dMDOOjuRxIB88nCfP6ec/pub"
                             class="card-link">View Notes</a>
                     </div>
@@ -75,7 +77,8 @@
             <div class="col-sm-6">
                 <div class="jumbotron">
                     <h1 class="display-4">Hello, everybody!</h1>
-                    <p class="lead">One of the most fun ways to manipulate a web page is by changing some key elements</p>
+                    <p class="lead">One of the most fun ways to manipulate a web page is by changing some key elements
+                    </p>
                     <hr class="my-4">
                     <p>If you wish, click the button below to change the tab's icon.</p>
                     <p class="lead">
@@ -86,20 +89,65 @@
             <div class="col-sm-6">
                 <div class="alert alert-info" role="alert">
                     <h4 class="alert-heading">If you can see this, my webpage worked!</h4>
-                    <p>Just for fun, here is a testing link for <a href="https://latinlexicon.org/" target="_blank" rel="noreferrer" class="alert-link">Latin Lexicon</a> within the alert.</p>
+                    <p>Just for fun, here is a testing link for <a href="https://latinlexicon.org/" target="_blank"
+                            rel="noreferrer" class="alert-link">Latin Lexicon</a> within the alert.</p>
                     <hr>
                     <p class="mb-0">Remember that the most elegant solutions are (sometimes) the best.</p>
                     <p class="mb-0">Working on the progress.</p>
                 </div>
                 <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
                     <div class="my-3 p-3">
-                      <h2 class="display-5">Thank you!</h2>
-                      <p class="lead">Have a pleasant day.</p>
+                        <h2 class="display-5">Thank you!</h2>
+                        <p class="lead">Have a pleasant day.</p>
                     </div>
-                  </div>
+                </div>
             </div>
         </div>
     </div>
+
+    <!--Modals-->
+    <div class="modal fade" id="dataStructuresModal" tabindex="-1" role="dialog"
+        aria-labelledby="dataStructuresModalTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="dataStructuresModalTitle">Preview</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="embed-responsive embed-responsive-1by1">
+                        <iframe class="embed-responsive-item"
+                            src="/DataStructures/"></iframe>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a class="btn btn-primary" href="/DataStructures">Navigate to Page</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="apcsaModal" tabindex="-1" role="dialog" aria-labelledby="apcsaModalTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="apcsaModalTitle">Preview</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="embed-responsive embed-responsive-1by1">
+                        <iframe class="embed-responsive-item"
+                            src="/IndividualWork/"></iframe>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a class="btn btn-primary" href="/IndividualWork">Navigate to Page</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="jquery-3.4.1.slim.min.js"></script>
     <script src="bootstrap.min.js"></script>
     <script src="main.js"></script>
