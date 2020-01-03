@@ -4,7 +4,6 @@ import { Container } from './Bootstrap'
 import Main from './Main'
 import Footer from './Footer'
 
-
 const App: React.FC = () => {
   return (
     <div className="app">

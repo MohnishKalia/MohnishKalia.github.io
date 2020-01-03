@@ -68,7 +68,7 @@ export class Extra extends Component {
                         <div className="alert alert-info h-100" role="alert">
                             <h4 className="alert-heading">If you can see this, my webpage worked!</h4>
                             <p>Just for fun, here is a testing link for <a href="https://latinlexicon.org/" target="_blank"
-                                rel="noreferrer" className="alert-link">Latin Lexicon</a> within the alert.</p>
+                                rel="noopener noreferrer" className="alert-link">Latin Lexicon</a> within the alert.</p>
                             <hr />
                             <p className="mb-0">
                                 arma virumque canō, Trōiae quī prīmus ab ōrīs<br />
@@ -82,7 +82,7 @@ export class Extra extends Component {
                     </div>
                     <div className="col-md-6 mt-4 mt-sm-0">
                         <div className="embed-responsive embed-responsive-16by9">
-                            <iframe className="embed-reponsive-item" src="https://www.youtube.com/embed/PsO6ZnUZI0g"></iframe>
+                            <iframe className="embed-reponsive-item" src="https://www.youtube.com/embed/PsO6ZnUZI0g" title="stronger"></iframe>
                         </div>
                     </div>
                 </div>
