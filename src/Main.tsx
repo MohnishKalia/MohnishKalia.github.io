@@ -26,7 +26,7 @@ export class Cards extends Component {
     apcsaData: CardData = {
         type: 'repo',
         title: 'AP Computer Science A',
-        description: 'Collection of Java samples and assignments used and created during myjunior year computer science class.',
+        description: 'Collection of Java samples and assignments used and created during my junior year computer science class.',
         repoPath: '/IndividualWork/',
         notesPath: 'https://docs.google.com/document/d/127zV5BPuIynxdtRpARvU-n5dMDOOjuRxIB88nCfP6ec/pub'
     }
@@ -34,7 +34,7 @@ export class Cards extends Component {
     ctwData: CardData = {
         type: 'ref',
         title: 'Code the Way',
-        description: 'Notes accrued throughout the CTW 2019 master class. This is more listed text than images.',
+        description: 'Notes accrued throughout the CTW 2019 master class. This is more listed text than actual images.',
         notesPath: 'https://docs.google.com/document/d/e/2PACX-1vQWmHEEKGJrUIU6FswHLYe0v9bzLJQIW6P9e1f1FikISQrFTDie71-aBZKFFINakS8lNKYOu6ZJQb5C/pub'
     }
 
