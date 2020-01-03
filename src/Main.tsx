@@ -38,6 +38,15 @@ export class Cards extends Component {
         notesPath: 'https://docs.google.com/document/d/e/2PACX-1vQWmHEEKGJrUIU6FswHLYe0v9bzLJQIW6P9e1f1FikISQrFTDie71-aBZKFFINakS8lNKYOu6ZJQb5C/pub'
     }
 
+    // async getData() {
+    //     const res = await fetch('./cards.json');
+    //     const json: CardData[] = await res.json();
+    //     const items = [];
+    //     for (const d of json)
+    //         items.push(<Card data={d} />);
+    //     return items;
+    // }
+
     render() {
         return (
             <div className="row card-deck">
