@@ -70,16 +70,17 @@ export class Extra extends Component {
                             <p>Just for fun, here is a testing link for <a href="https://latinlexicon.org/" target="_blank"
                                 rel="noreferrer" className="alert-link">Latin Lexicon</a> within the alert.</p>
                             <hr />
-                            <p className="mb-0">arma virumque canō, Trōiae quī prīmus ab ōrīs</p>
-                            <p className="mb-0">Ītaliam fātō profugus Lāvīniaque vēnit</p>
-                            <p className="mb-0">lītŏra, multum ille et terrīs iactātus et altō</p>
-                            <p className="mb-0">vī superum, saevae memorem Iūnōnis ob īram</p>
-                            <hr/>
-                            <p className="mb-0">Remember that the most elegant solutions are (sometimes) the best.</p>
-                            <p className="mb-0">Working on the progress.</p>
+                            <p className="mb-0">
+                                arma virumque canō, Trōiae quī prīmus ab ōrīs<br />
+                                Ītaliam fātō profugus Lāvīniaque vēnit<br />
+                                lītŏra, multum ille et terrīs iactātus et altō<br />
+                                vī superum, saevae memorem Iūnōnis ob īram
+                            </p>
+                            <hr />
+                            <p className="mb-0">Remember that the most elegant solutions are (sometimes) the best.<br />Working on the progress.</p>
                         </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 mt-4 mt-sm-0">
                         <div className="embed-responsive embed-responsive-16by9">
                             <iframe className="embed-reponsive-item" src="https://www.youtube.com/embed/PsO6ZnUZI0g"></iframe>
                         </div>
