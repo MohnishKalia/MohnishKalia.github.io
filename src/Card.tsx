@@ -19,7 +19,7 @@ export default class Card extends Component<{ data: CardData }> {
                     <p className="card-text">{description}</p>
                 </div>
                 <div className="card-footer">
-                    {repoPath && <a href={repoPath} className="card-link">Repo Page</a>}
+                    {repoPath && <a href={repoPath + "index.html"} className="card-link">Repo Page</a>}
                     {notesPath && <a href={notesPath} className="card-link">View Notes</a>}
                 </div>
             </div>
