@@ -10,7 +10,19 @@ export default class Header extends Component<{}, { checked: boolean }> {
 
     handleChange(checked: boolean) {
         this.setState({ checked });
-        (document.getElementById('theme') as HTMLLinkElement).href = `https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/${checked ? 'darkly' : 'litera'}/bootstrap.min.css`
+        const elt = document.getElementById('theme');
+        if (elt) elt.remove();
+        else this.createLight();
+        //(document.getElementById('theme') as HTMLLinkElement).href = `https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/${checked ? 'darkly' : 'litera'}/bootstrap.min.css`
+    }
+
+    createLight() {
+        const pop = document.createElement('link');
+        pop.href = 'https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/litera/bootstrap.min.css';
+        pop.id = 'theme';
+        pop.rel = 'stylesheet';
+        pop.crossOrigin = 'anonymous';
+        document.querySelector('body')?.append(pop);
     }
 
     render() {
