@@ -35,8 +35,8 @@ export default class Header extends Component<{}, { checked: boolean }> {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav navbar-right ml-auto">
-                            <a className="nav-item nav-link" href="/DataStructures">Data Structures</a>
-                            <a className="nav-item nav-link" href="/IndividualWork">AP Computer Science A</a>
+                            <a className="nav-item nav-link" href="/DataStructures/">Data Structures</a>
+                            <a className="nav-item nav-link" href="/IndividualWork/">AP Computer Science A</a>
                             <form className="form-inline">
                                 <span className="navbar-text ml-0 ml-sm-3 mr-3 font-weight-bold">Dark Mode</span>
                                 <Switch onChange={this.handleChange} checked={this.state.checked} />
