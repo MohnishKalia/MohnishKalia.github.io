@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import Switch from 'react-switch'
 
 export default class Header extends Component<{}, { checked: boolean }> {
-    constructor() {
-        super({});
+    constructor(props: {}) {
+        super(props);
         this.state = { checked: true };
         this.handleChange = this.handleChange.bind(this);
     }

@@ -1,6 +1,7 @@
 import React, { Component, useState } from 'react'
 import Card, { CardData } from './Card';
 import Media, { MediaData } from './Media'
+import Header from './Header';
 
 export default class Main extends Component {
     render() {
@@ -18,38 +19,26 @@ export default class Main extends Component {
 
 export const Heading: React.FC<{ text: string }> = ({ text }) => <h3 className="col-md-12">{text}</h3>
 
-export class Cards extends Component {
+export class Cards extends Component<{}, { cards: CardData[] }> {
 
-    dsData: CardData = {
-        type: 'repo',
-        title: 'Data Structures',
-        description: 'Assignment Java source code + book files for Data Structures @ Marquette University.',
-        repoPath: '/DataStructures/',
-        notesPath: 'https://docs.google.com/document/d/e/2PACX-1vQcWbUfrRR6N6h5BxdnzteHXayVCi9nv1hvHtMouggw2LDqTTiv7itdBcaWeXcZQRe8zkZ8B7KZuAT-/pub'
-    };
-
-    apcsaData: CardData = {
-        type: 'repo',
-        title: 'AP Computer Science A',
-        description: 'Collection of Java samples and assignments used and created during my junior year computer science class.',
-        repoPath: '/IndividualWork/',
-        notesPath: 'https://docs.google.com/document/d/127zV5BPuIynxdtRpARvU-n5dMDOOjuRxIB88nCfP6ec/pub'
+    constructor(props: {}) {
+        super(props);
+        this.state = { cards: [] };
     }
 
-    ctwData: CardData = {
-        type: 'ref',
-        title: 'Code the Way',
-        description: 'Notes accrued throughout the CTW 2019 master class. This is more listed text than actual images.',
-        notesPath: 'https://docs.google.com/document/d/e/2PACX-1vQWmHEEKGJrUIU6FswHLYe0v9bzLJQIW6P9e1f1FikISQrFTDie71-aBZKFFINakS8lNKYOu6ZJQb5C/pub'
+    async componentDidMount() {
+        const res = await fetch('./cards.json');
+        const cards = await res.json() as CardData[];
+        this.setState({ cards });
     }
 
     render() {
         return (
             <div className="row">
-                <div id="cards" className="card-deck">
-                    <Card data={this.dsData} />
-                    <Card data={this.apcsaData} />
-                    <Card data={this.ctwData} />
+                <div className="col-md-12">
+                    <div id="cards" className="card-deck">
+                        {this.state.cards.map(card => <Card data={card} key={card.title} />)}
+                    </div>
                 </div>
             </div>
         )
@@ -58,7 +47,7 @@ export class Cards extends Component {
 
 export const Iam: React.FC = () =>
     <div id="iam" className="row">
-        <h1>I Am... PLACEHOLDER</h1>
+        <Heading text="I Am... PLACEHOLDER" />
     </div>
 
 export class Proficiencies extends Component<{}, { profs: MediaData[] }> {
@@ -67,55 +56,6 @@ export class Proficiencies extends Component<{}, { profs: MediaData[] }> {
         this.state = { profs: [] };
     }
 
-    // profs: MediaData[] = [{
-    //     "type": "backend",
-    //     "name": "Java",
-    //     "description": "Data structures, algorithms, business logic design",
-    //     "confidence": 4
-    // },
-    // {
-    //     "type": "backend",
-    //     "name": "CSharp",
-    //     "description": "MVC with .NET and EFCore",
-    //     "confidence": 3
-    // },
-    // {
-    //     "type": "webdevkit",
-    //     "name": "Javascript",
-    //     "description": "DOM interaction, REST APIs, async/await, Browser API",
-    //     "confidence": 5
-    // },
-    // {
-    //     "type": "webdevkit",
-    //     "name": "Node.js",
-    //     "description": "API requests, API design, npm, full-stack JSE + deployment",
-    //     "confidence": 3
-    // },
-    // {
-    //     "type": "webdevkit",
-    //     "name": "React",
-    //     "description": "This page is made with React! Working out hooks",
-    //     "confidence": 2
-    // },
-    // {
-    //     "type": "webdevkit",
-    //     "name": "Typescript",
-    //     "description": "Static typing made simple, 2nd nature from JS background",
-    //     "confidence": 4
-    // },
-    // {
-    //     "type": "scripting",
-    //     "name": "Python",
-    //     "description": "Starting with web scrapers, file manipulation, algorithms",
-    //     "confidence": 2
-    // },
-    // {
-    //     "type": "scripting",
-    //     "name": "Coming Soon",
-    //     "description": "This is not ready to be revealed yet...",
-    //     "confidence": 5
-    // }]
-
     async componentDidMount() {
         const res = await fetch('./profs.json');
         const profs = await res.json() as MediaData[];
@@ -123,11 +63,7 @@ export class Proficiencies extends Component<{}, { profs: MediaData[] }> {
     }
 
     getMedia(filter: string) {
-        const items: JSX.Element[] = [];
-        if (this.state.profs)
-            for (const med of this.state.profs.filter(media => media.type === filter))
-                items.push(<Media data={med} key={med.name} />)
-        return items;
+        return this.state.profs.filter(media => media.type === filter).map(media => <Media data={media} key={media.name} />);
     }
 
     render() {
@@ -152,7 +88,7 @@ export class Proficiencies extends Component<{}, { profs: MediaData[] }> {
 
 export const Education: React.FC = () =>
     <div id="edu" className="row">
-        <h1>Education PLACEHOLDER</h1>
+        <Heading text="Education PLACEHOLDER" />
     </div>
 
 export class Extra extends Component {
