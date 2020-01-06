@@ -6,6 +6,11 @@
         {
             "type": "npm",
             "script": "deploy",
+            "group": "build"
+        },
+        {
+            "type": "npm",
+            "script": "start",
             "group": {
                 "kind": "build",
                 "isDefault": true

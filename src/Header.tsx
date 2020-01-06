@@ -22,7 +22,7 @@ export default class Header extends Component<{}, { checked: boolean }> {
         pop.id = 'theme';
         pop.rel = 'stylesheet';
         pop.crossOrigin = 'anonymous';
-        document.querySelector('body')?.append(pop);
+        document.querySelector('head')?.append(pop);
     }
 
     render() {
