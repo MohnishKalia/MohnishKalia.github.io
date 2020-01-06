@@ -25,6 +25,12 @@ export default class Header extends Component<{}, { checked: boolean }> {
         document.querySelector('head')?.append(pop);
     }
 
+    componentDidMount() {
+        const body = document.querySelector('body') as HTMLElement;
+        const navbar = document.getElementById('navbar') as HTMLElement;
+        body.setAttribute('data-offset', String(navbar.offsetHeight + 20));
+    }
+
     render() {
         return (
             <nav id="navbar" className="navbar navbar-expand-md navbar-dark bg-danger sticky-top mb-3">
