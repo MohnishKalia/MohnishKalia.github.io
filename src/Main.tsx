@@ -4,6 +4,7 @@ import Media, { MediaData } from './Media';
 
 const Main: React.FC = () =>
     <div>
+        <Construction />
         <Cards />
         <Iam />
         <Proficiencies />
@@ -20,6 +21,14 @@ export const Item: React.FC<{ heading: string, description: string }> = ({ headi
         <h5 className="mb-1">{heading}</h5>
         <p className="mb-1 text-muted">{description}</p>
     </li>
+
+export const Construction: React.FC = () =>
+    <div className="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Warning! This site is under constuction.</strong> Content within is not reflective of finished product.
+            <button type="button" className="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
 
 export class Cards extends Component<{}, { cards: CardData[] }> {
 
@@ -97,7 +106,13 @@ export class Proficiencies extends Component<{}, { profs: MediaData[] }> {
 
 export const Education: React.FC = () =>
     <div id="edu" className="row">
-        <Heading text="Education PLACEHOLDER" />
+        <Heading text="Education" />
+        <div className="col-md-12">
+            <ul className="list-group list-group-flush">
+                <Item heading="Brookfield Central High School" description="General studies and LAUNCH, 2020" />
+                <Item heading="Marquette University" description="COSC 2100 Data Structures and Algorithms" />
+            </ul>
+        </div>
     </div>
 
 export const Extra: React.FC = () =>
