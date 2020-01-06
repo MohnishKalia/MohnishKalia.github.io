@@ -27,16 +27,19 @@ export default class Header extends Component<{}, { checked: boolean }> {
 
     render() {
         return (
-            <nav className="navbar navbar-expand-md navbar-dark bg-danger sticky-top mb-3">
+            <nav id="navbar" className="navbar navbar-expand-md navbar-dark bg-danger sticky-top mb-3">
                 <div className="container">
-                    <a className="navbar-brand" href="#">Mohnish Kalia</a>
+                    <a className="navbar-brand" href="https://github.com/MohnishKalia">Mohnish Kalia</a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav navbar-right ml-auto">
-                            <a className="nav-item nav-link" href="/DataStructures/index.html">Data Structures</a>
-                            <a className="nav-item nav-link" href="/IndividualWork/index.html">AP Computer Science A</a>
+                            <a className="nav-item nav-link" href="#cards">Past Projects</a>
+                            <a className="nav-item nav-link" href="#iam">I am...</a>
+                            <a className="nav-item nav-link" href="#profs">Proficiencies</a>
+                            <a className="nav-item nav-link" href="#edu">Education</a>
+                            <a className="nav-item nav-link" href="#footer">Contact</a>
                             <form className="form-inline">
                                 <span className="navbar-text ml-0 ml-sm-3 mr-3 font-weight-bold">Dark Mode</span>
                                 <Switch onChange={this.handleChange} checked={this.state.checked} />

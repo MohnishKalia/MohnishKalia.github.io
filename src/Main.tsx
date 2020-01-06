@@ -1,17 +1,22 @@
-import React, { Component } from 'react'
-import { CardData } from './types';
-import Card from './Card';
+import React, { Component, useState } from 'react'
+import Card, { CardData } from './Card';
+import Media, { MediaData } from './Media'
 
 export default class Main extends Component {
     render() {
         return (
             <div>
                 <Cards />
+                <Iam />
+                <Proficiencies />
+                <Education />
                 <Extra />
             </div>
         )
     }
 }
+
+export const Heading: React.FC<{ text: string }> = ({ text }) => <h3 className="col-md-12">{text}</h3>
 
 export class Cards extends Component {
 
@@ -38,25 +43,117 @@ export class Cards extends Component {
         notesPath: 'https://docs.google.com/document/d/e/2PACX-1vQWmHEEKGJrUIU6FswHLYe0v9bzLJQIW6P9e1f1FikISQrFTDie71-aBZKFFINakS8lNKYOu6ZJQb5C/pub'
     }
 
-    // async getData() {
-    //     const res = await fetch('./cards.json');
-    //     const json: CardData[] = await res.json();
-    //     const items = [];
-    //     for (const d of json)
-    //         items.push(<Card data={d} />);
-    //     return items;
-    // }
-
     render() {
         return (
-            <div className="row card-deck">
-                <Card data={this.dsData} />
-                <Card data={this.apcsaData} />
-                <Card data={this.ctwData} />
+            <div className="row">
+                <div id="cards" className="card-deck">
+                    <Card data={this.dsData} />
+                    <Card data={this.apcsaData} />
+                    <Card data={this.ctwData} />
+                </div>
             </div>
         )
     }
 }
+
+export const Iam: React.FC = () =>
+    <div id="iam" className="row">
+        <h1>I Am... PLACEHOLDER</h1>
+    </div>
+
+export class Proficiencies extends Component<{}, { profs: MediaData[] }> {
+    constructor(props: {}) {
+        super(props);
+        this.state = { profs: [] };
+    }
+
+    // profs: MediaData[] = [{
+    //     "type": "backend",
+    //     "name": "Java",
+    //     "description": "Data structures, algorithms, business logic design",
+    //     "confidence": 4
+    // },
+    // {
+    //     "type": "backend",
+    //     "name": "CSharp",
+    //     "description": "MVC with .NET and EFCore",
+    //     "confidence": 3
+    // },
+    // {
+    //     "type": "webdevkit",
+    //     "name": "Javascript",
+    //     "description": "DOM interaction, REST APIs, async/await, Browser API",
+    //     "confidence": 5
+    // },
+    // {
+    //     "type": "webdevkit",
+    //     "name": "Node.js",
+    //     "description": "API requests, API design, npm, full-stack JSE + deployment",
+    //     "confidence": 3
+    // },
+    // {
+    //     "type": "webdevkit",
+    //     "name": "React",
+    //     "description": "This page is made with React! Working out hooks",
+    //     "confidence": 2
+    // },
+    // {
+    //     "type": "webdevkit",
+    //     "name": "Typescript",
+    //     "description": "Static typing made simple, 2nd nature from JS background",
+    //     "confidence": 4
+    // },
+    // {
+    //     "type": "scripting",
+    //     "name": "Python",
+    //     "description": "Starting with web scrapers, file manipulation, algorithms",
+    //     "confidence": 2
+    // },
+    // {
+    //     "type": "scripting",
+    //     "name": "Coming Soon",
+    //     "description": "This is not ready to be revealed yet...",
+    //     "confidence": 5
+    // }]
+
+    async componentDidMount() {
+        const res = await fetch('./profs.json');
+        const profs = await res.json() as MediaData[];
+        this.setState({ profs });
+    }
+
+    getMedia(filter: string) {
+        const items: JSX.Element[] = [];
+        if (this.state.profs)
+            for (const med of this.state.profs.filter(media => media.type === filter))
+                items.push(<Media data={med} key={med.name} />)
+        return items;
+    }
+
+    render() {
+        return (
+            <div id="profs">
+                <div id="backend" className="row">
+                    <Heading text="Backend" />
+                    {this.getMedia('backend')}
+                </div>
+                <div id="webdevkit" className="row">
+                    <Heading text="Web Devkit" />
+                    {this.getMedia('webdevkit')}
+                </div>
+                <div id="scripting" className="row">
+                    <Heading text="Scripting" />
+                    {this.getMedia('scripting')}
+                </div>
+            </div>
+        )
+    }
+}
+
+export const Education: React.FC = () =>
+    <div id="edu" className="row">
+        <h1>Education PLACEHOLDER</h1>
+    </div>
 
 export class Extra extends Component {
     render() {

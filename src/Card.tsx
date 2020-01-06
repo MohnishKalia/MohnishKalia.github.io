@@ -1,5 +1,12 @@
 import React, { Component } from 'react'
-import { CardData } from './types'
+
+export type CardData = {
+    type: "repo" | "ref",
+    title: string
+    description: string,
+    repoPath?: string,
+    notesPath?: string
+}
 
 export default class Card extends Component<{ data: CardData }> {
 

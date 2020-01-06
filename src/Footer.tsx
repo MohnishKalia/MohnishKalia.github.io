@@ -3,12 +3,12 @@ import React, { Component } from 'react'
 export default class Footer extends Component {
     render() {
         return (
-            <footer className="my-4">
+            <footer id="footer" className="my-4">
                 <div className="row">
                     <div className="col-md-6">
                         <h3 className="text-uppercase">Mohnish Kalia</h3>
                         <p className="text-muted">Please check the links for further information.<br />Do not hesitate to reachout.</p>
-                        <p className="text-muted">My professional email is: <a href="mailto:mohnish.kalia@gmail.com">mohnish.kalia@gmail.com</a></p>
+                        <p className="text-muted">My email is: <a href="mailto:mohnish.kalia@gmail.com">mohnish.kalia@gmail.com</a></p>
                     </div>
                     <div className="col-md-6">
                         <h3 className="text-uppercase">Helpful Resources</h3>
