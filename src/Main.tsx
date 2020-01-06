@@ -2,21 +2,24 @@ import React, { Component } from 'react';
 import Card, { CardData } from './Card';
 import Media, { MediaData } from './Media';
 
-export default class Main extends Component {
-    render() {
-        return (
-            <div>
-                <Cards />
-                <Iam />
-                <Proficiencies />
-                <Education />
-                <Extra />
-            </div>
-        )
-    }
-}
+const Main: React.FC = () =>
+    <div>
+        <Cards />
+        <Iam />
+        <Proficiencies />
+        <Education />
+        <Extra />
+    </div>
+
+export default Main;
 
 export const Heading: React.FC<{ text: string }> = ({ text }) => <h3 className="col-md-12">{text}</h3>
+
+export const Item: React.FC<{ heading: string, description: string }> = ({ heading, description }) =>
+    <li className="list-group-item">
+        <h5 className="mb-1">{heading}</h5>
+        <p className="mb-1 text-muted">{description}</p>
+    </li>
 
 export class Cards extends Component<{}, { cards: CardData[] }> {
 
@@ -45,8 +48,14 @@ export class Cards extends Component<{}, { cards: CardData[] }> {
 }
 
 export const Iam: React.FC = () =>
-    <div id="iam" className="row">
-        <Heading text="I Am... PLACEHOLDER" />
+    <div id="iam" className="row my-4">
+        <Heading text="I Am..." />
+        <div className="col-md-12">
+            <ul className="list-group list-group-flush">
+                <Item heading="17 years old" description="Looking towards college and a career" />
+                <Item heading="Full-stack developer" description="Hands on with MVC, MERN" />
+            </ul>
+        </div>
     </div>
 
 export class Proficiencies extends Component<{}, { profs: MediaData[] }> {
