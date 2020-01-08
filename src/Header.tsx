@@ -28,7 +28,7 @@ export default class Header extends Component<{}, { checked: boolean }> {
     componentDidMount() {
         const body = document.querySelector('body') as HTMLElement;
         const navbar = document.getElementById('navbar') as HTMLElement;
-        body.setAttribute('data-offset', String(navbar.offsetHeight + 20));
+        body.setAttribute('data-offset', String(navbar.offsetHeight + 15));
     }
 
     render() {
@@ -43,8 +43,16 @@ export default class Header extends Component<{}, { checked: boolean }> {
                         <div className="navbar-nav navbar-right ml-auto">
                             <a className="nav-item nav-link" href="#cards">Past Projects</a>
                             <a className="nav-item nav-link" href="#iam">I am...</a>
-                            <a className="nav-item nav-link" href="#profs">Proficiencies</a>
+                            <div className="dropdown">
+                                <a className="nav-item nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Proficiencies</a>
+                                <div className="dropdown-menu">
+                                    <a className="dropdown-item" href="#backend">Backend</a>
+                                    <a className="dropdown-item" href="#webdevkit">Web Devkit</a>
+                                    <a className="dropdown-item" href="#scripting">Scripting</a>
+                                </div>
+                            </div>
                             <a className="nav-item nav-link" href="#edu">Education</a>
+                            <a className="nav-item nav-link" href="#extra">...</a>
                             <a className="nav-item nav-link" href="#footer">Contact</a>
                             <form className="form-inline">
                                 <span className="navbar-text ml-0 ml-sm-3 mr-3 font-weight-bold">Dark Mode</span>

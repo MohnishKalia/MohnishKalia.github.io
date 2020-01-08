@@ -43,21 +43,28 @@ export class Cards extends Component<{}, { cards: CardData[] }> {
         this.setState({ cards });
     }
 
+    getDecks() {
+        const { cards } = this.state;
+        const decks: JSX.Element[][] = [[]];
+        for (const [i, card] of cards.entries()) {
+            const index = Math.floor(i / 3);
+            const cur = decks[index];
+            cur.push(<Card data={card} key={card.title} />);
+        }
+        return decks.map(arr => <div className="col-md-12 mb-4"><div className="card-deck">{arr}</div></div>);
+    }
+
     render() {
         return (
-            <div className="row">
-                <div className="col-md-12">
-                    <div id="cards" className="card-deck">
-                        {this.state.cards.map(card => <Card data={card} key={card.title} />)}
-                    </div>
-                </div>
+            <div id="cards" className="row">
+                {this.getDecks()}
             </div>
         )
     }
 }
 
 export const Iam: React.FC = () =>
-    <div id="iam" className="row my-4">
+    <div id="iam" className="row mb-4">
         <Heading text="I Am..." />
         <div className="col-md-12">
             <ul className="list-group list-group-flush">
@@ -116,7 +123,7 @@ export const Education: React.FC = () =>
     </div>
 
 export const Extra: React.FC = () =>
-    <div>
+    <div id="extra">
         <div className="jumbotron my-4">
             <h1 className="display-4">Hello, everybody!</h1>
             <p className="lead">One of the most fun ways to manipulate a web page is by changing some key elements
