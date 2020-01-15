@@ -1,25 +1,34 @@
 import React, { Component } from 'react';
 import Card, { CardData } from './Card';
 import Media, { MediaData } from './Media';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faApple, faJediOrder, faGithubSquare, faBattleNet, IconDefinition } from '@fortawesome/free-brands-svg-icons'
 
 const Main: React.FC = () =>
     <div>
-        <Construction />
+        {/* <Construction /> */}
         <Cards />
         <Iam />
         <Proficiencies />
         <Education />
-        <Extra />
+        {/* <Extra /> */}
     </div>
 
 export default Main;
 
 export const Heading: React.FC<{ text: string }> = ({ text }) => <h3 className="col-md-12">{text}</h3>
 
-export const Item: React.FC<{ heading: string, description: string }> = ({ heading, description }) =>
+export const Item: React.FC<{ heading: string, description: string, icon: IconDefinition }> = ({ heading, description, icon }) =>
     <li className="list-group-item">
-        <h5 className="mb-1">{heading}</h5>
-        <p className="mb-1 text-muted">{description}</p>
+        <div className="row">
+            <div className="col-9">
+                <h5 className="mb-1">{heading}</h5>
+                <p className="mb-1 text-muted">{description}</p>
+            </div>
+            <div className="col-3 text-right">
+                <FontAwesomeIcon icon={icon} size={"4x"} fixedWidth/>
+            </div>
+        </div>
     </li>
 
 export const Construction: React.FC = () =>
@@ -68,8 +77,8 @@ export const Iam: React.FC = () =>
         <Heading text="I Am..." />
         <div className="col-md-12">
             <ul className="list-group list-group-flush">
-                <Item heading="17 years old" description="Looking towards college and a career" />
-                <Item heading="Full-stack developer" description="Hands on with MVC, MERN" />
+                <Item heading="17 years old" description="Looking towards college and a career" icon={faGithubSquare} />
+                <Item heading="Full-stack developer" description="Hands on with MVC, MERN" icon={faJediOrder} />
             </ul>
         </div>
     </div>
@@ -116,8 +125,8 @@ export const Education: React.FC = () =>
         <Heading text="Education" />
         <div className="col-md-12">
             <ul className="list-group list-group-flush">
-                <Item heading="Brookfield Central High School" description="General studies and LAUNCH, 2020" />
-                <Item heading="Marquette University" description="COSC 2100 Data Structures and Algorithms" />
+                <Item heading="Brookfield Central High School" description="General studies and LAUNCH, 2020" icon={faApple} />
+                <Item heading="Marquette University" description="COSC 2100 Data Structures and Algorithms" icon={faBattleNet} />
             </ul>
         </div>
     </div>
