@@ -1,32 +1,27 @@
 import React, { Component } from 'react'
+import { Container } from './Bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons'
+import { faGithub, faLinkedin, IconDefinition } from '@fortawesome/free-brands-svg-icons'
 
 export default class Footer extends Component {
     render() {
         return (
-            <footer id="footer" className="my-4">
-                <div className="row">
-                    <div className="col-md-6">
-                        <h3 className="text-uppercase">Mohnish Kalia</h3>
-                        <p className="text-muted">Please check the links for further information.<br />Do not hesitate to reachout.</p>
-                        <p className="text-muted">My email is: <a href="mailto:mohnish.kalia@gmail.com">mohnish.kalia@gmail.com</a></p>
+            <footer id="footer" className="pt-md-4 pb-4">
+                <Container>
+                    <div className="row">
+                        <BrandItem icon={faGithub} text={"MohnishKalia"} link={"https://github.com/MohnishKalia"} />
+                        <BrandItem icon={faEnvelopeOpenText} text={"mohnish.kalia@gmail.com"} link={"mailto:mohnish.kalia@gmail.com"} />
+                        <BrandItem icon={faLinkedin} text={"Mohnish Kalia"} link={"https://www.linkedin.com/in/mohnishkalia/"} />
                     </div>
-                    <div className="col-md-6">
-                        <h3 className="text-uppercase">Helpful Resources</h3>
-                        <ul className="list-unstyled text-small">
-                            <li><a className="text-muted" href="https://beastscouttest.netlify.com">BEAST Scouting</a></li>
-                            <li><a className="text-muted" href="https://shiffman.net">Helpful JS Teacher</a></li>
-                            <li><a className="text-muted" href="https://github.com/MohnishKalia">GitHub Profile</a></li>
-                            <li><a className="text-muted"
-                                href="https://docs.oracle.com/en/java/javase/13/docs/api/index.html">Java 13 API</a>
-                            </li>
-                            <li><a className="text-muted" href="https://developer.mozilla.org/en-US/docs/Web">MDN</a></li>
-                        </ul>
-                    </div>
-                    <div className="col-md-12">
-                        <p className="text-muted">This website and all content authored by Mohnish Kalia within is open source.</p>
-                    </div>
-                </div>
+                </Container>
             </footer>
         )
     }
 }
+
+export const BrandItem: React.FC<{ icon: IconDefinition, text: string, link: string }> = ({ icon, text, link }) =>
+    <div className="col-md my-2 my-md-0 text-center text-muted">
+        <FontAwesomeIcon icon={icon} className="mr-3" size="2x"/>
+        <a href={link} className="h5 stretched-link text-reset text-decoration-none">{text}</a>
+    </div>

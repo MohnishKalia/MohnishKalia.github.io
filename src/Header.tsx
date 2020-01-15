@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Container } from './Bootstrap'
 import Switch from 'react-switch'
 
 export default class Header extends Component<{}, { checked: boolean, scrollProgress: number }> {
@@ -42,8 +43,8 @@ export default class Header extends Component<{}, { checked: boolean, scrollProg
         return (
             <div className="mb-3 sticky-top">
                 <nav id="navbar" className="navbar navbar-expand-md navbar-dark bg-danger">
-                    <div className="container">
-                        <a className="navbar-brand" href="https://github.com/MohnishKalia">Mohnish Kalia</a>
+                    <Container>
+                        <a className="navbar-brand" href="#">Mohnish Kalia</a>
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
@@ -68,7 +69,7 @@ export default class Header extends Component<{}, { checked: boolean, scrollProg
                                 </form>
                             </div>
                         </div>
-                    </div>
+                    </Container>
                 </nav>
                 <div className="progress" style={{ height: "2px" }}>
                     <div className="progress-bar bg-success" role="progressbar" style={{

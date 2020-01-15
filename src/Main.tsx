@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
+import { Container } from './Bootstrap'
 import Card, { CardData } from './Card';
 import Media, { MediaData } from './Media';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faApple, faJediOrder, faGithubSquare, faBattleNet, IconDefinition } from '@fortawesome/free-brands-svg-icons'
+import { faGraduationCap, faUniversity, faLayerGroup, faUser, IconDefinition } from '@fortawesome/free-solid-svg-icons'
 
 const Main: React.FC = () =>
-    <div>
+    <Container>
         {/* <Construction /> */}
         <Cards />
         <Iam />
         <Proficiencies />
         <Education />
         {/* <Extra /> */}
-    </div>
+    </Container>
 
 export default Main;
 
@@ -26,7 +27,7 @@ export const Item: React.FC<{ heading: string, description: string, icon: IconDe
                 <p className="mb-1 text-muted">{description}</p>
             </div>
             <div className="col-3 text-right">
-                <FontAwesomeIcon icon={icon} size={"4x"} fixedWidth/>
+                <FontAwesomeIcon icon={icon} size={"4x"} fixedWidth />
             </div>
         </div>
     </li>
@@ -77,8 +78,8 @@ export const Iam: React.FC = () =>
         <Heading text="I Am..." />
         <div className="col-md-12">
             <ul className="list-group list-group-flush">
-                <Item heading="17 years old" description="Looking towards college and a career" icon={faGithubSquare} />
-                <Item heading="Full-stack developer" description="Hands on with MVC, MERN" icon={faJediOrder} />
+                <Item heading="17 years old" description="Looking towards college and a career" icon={faUser} />
+                <Item heading="Full-stack developer" description="Hands on with MVC, MERN" icon={faLayerGroup} />
             </ul>
         </div>
     </div>
@@ -121,12 +122,12 @@ export class Proficiencies extends Component<{}, { profs: MediaData[] }> {
 }
 
 export const Education: React.FC = () =>
-    <div id="edu" className="row">
+    <div id="edu" className="row mb-4">
         <Heading text="Education" />
         <div className="col-md-12">
             <ul className="list-group list-group-flush">
-                <Item heading="Brookfield Central High School" description="General studies and LAUNCH, 2020" icon={faApple} />
-                <Item heading="Marquette University" description="COSC 2100 Data Structures and Algorithms" icon={faBattleNet} />
+                <Item heading="Brookfield Central High School" description="General studies and LAUNCH, 2020" icon={faGraduationCap} />
+                <Item heading="Marquette University" description="COSC 2100 Data Structures and Algorithms" icon={faUniversity} />
             </ul>
         </div>
     </div>
