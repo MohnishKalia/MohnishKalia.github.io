@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-import { Container } from './Bootstrap'
-import Card, { CardData } from './Card';
-import Media, { MediaData } from './Media';
+import { Container } from './templates/Bootstrap'
+import Card, { CardData } from './templates/Card';
+import Media, { MediaData } from './templates/Media';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGraduationCap, faUniversity, faLayerGroup, faUser, IconDefinition } from '@fortawesome/free-solid-svg-icons'
+import Cards from '../data/cards';
+import Profs from '../data/profs';
 
 const Main: React.FC = () =>
     <Container>
         {/* <Construction /> */}
-        <Cards />
+        <CardDeck />
         <Iam />
         <Proficiencies />
         <Education />
@@ -40,18 +42,18 @@ export const Construction: React.FC = () =>
         </button>
     </div>
 
-export class Cards extends Component<{}, { cards: CardData[] }> {
+export class CardDeck extends Component<{}, { cards: CardData[] }> {
 
     constructor(props: {}) {
         super(props);
-        this.state = { cards: [] };
+        this.state = { cards: Cards };
     }
 
-    async componentDidMount() {
-        const res = await fetch('./cards.json');
-        const cards = await res.json() as CardData[];
-        this.setState({ cards });
-    }
+    // async componentDidMount() {
+    //     const res = await fetch('./cards.json');
+    //     const cards = await res.json() as CardData[];
+    //     this.setState({ cards });
+    // }
 
     getDecks() {
         const { cards } = this.state;
@@ -87,14 +89,14 @@ export const Iam: React.FC = () =>
 export class Proficiencies extends Component<{}, { profs: MediaData[] }> {
     constructor(props: {}) {
         super(props);
-        this.state = { profs: [] };
+        this.state = { profs: Profs };
     }
 
-    async componentDidMount() {
-        const res = await fetch('./profs.json');
-        const profs = await res.json() as MediaData[];
-        this.setState({ profs });
-    }
+    // async componentDidMount() {
+    //     const res = await fetch('./profs.json');
+    //     const profs = await res.json() as MediaData[];
+    //     this.setState({ profs });
+    // }
 
     getMedia(filter: string) {
         return this.state.profs.filter(media => media.type === filter).map(media => <Media data={media} key={media.name} />);

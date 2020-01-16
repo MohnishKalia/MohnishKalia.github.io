@@ -1,4 +1,6 @@
-[
+import { MediaData } from '../components/templates/Media'
+
+const Profs: MediaData[] = [
     {
         "type": "backend",
         "name": "Java",
@@ -48,3 +50,5 @@
         "confidence": 5
     }
 ]
+
+export default Profs;

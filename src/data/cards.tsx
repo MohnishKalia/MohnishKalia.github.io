@@ -1,4 +1,6 @@
-[
+import { CardData } from '../components/templates/Card'
+
+const Cards: CardData[] = [
     {
         "type": "repo",
         "title": "Data Structures",
@@ -19,4 +21,6 @@
         "description": "Notes accrued throughout the CTW 2019 master class. This is more listed text than images.",
         "notesPath": "https://docs.google.com/document/d/e/2PACX-1vQWmHEEKGJrUIU6FswHLYe0v9bzLJQIW6P9e1f1FikISQrFTDie71-aBZKFFINakS8lNKYOu6ZJQb5C/pub"
     }
-]
+];
+
+export default Cards;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container } from './Bootstrap'
+import { Container } from './templates/Bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faLinkedin, IconDefinition } from '@fortawesome/free-brands-svg-icons'

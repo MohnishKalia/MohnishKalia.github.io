@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container } from './Bootstrap'
+import { Container } from './templates/Bootstrap'
 import Switch from 'react-switch'
 
 export default class Header extends Component<{}, { checked: boolean, scrollProgress: number }> {
