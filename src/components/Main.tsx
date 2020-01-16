@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Container } from './templates/Bootstrap'
 import Card, { CardData } from './templates/Card';
 import Media, { MediaData } from './templates/Media';
+import Featurette from './templates/Featurette'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGraduationCap, faUniversity, faLayerGroup, faUser, IconDefinition } from '@fortawesome/free-solid-svg-icons'
 import Cards from '../data/cards';
@@ -11,8 +12,12 @@ const Main: React.FC = () =>
     <Container>
         {/* <Construction /> */}
         <CardDeck />
-        <Iam />
-        <Proficiencies />
+        <Featurette>
+            <Iam />
+        </Featurette>
+        <Featurette>
+            <Proficiencies />
+        </Featurette>
         <Education />
         {/* <Extra /> */}
     </Container>

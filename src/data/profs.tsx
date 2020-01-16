@@ -29,7 +29,7 @@ const Profs: MediaData[] = [
         "type": "webdevkit",
         "name": "React",
         "description": "This page is made with React! Working out hooks",
-        "confidence": 2
+        "confidence": 3
     },
     {
         "type": "webdevkit",
