@@ -3,17 +3,22 @@ import { Container } from './templates/Bootstrap'
 import Switch from 'react-switch'
 
 export default class Header extends Component<{}, { checked: boolean, scrollProgress: number }> {
+
+    elt = document.getElementById('theme') as HTMLLinkElement;
+
     constructor(props: {}) {
         super(props);
-        this.state = { checked: matchMedia('(prefers-color-scheme: dark), (prefers-color-scheme: no-preference)').matches, scrollProgress: 0 };
+        this.state = { checked: matchMedia('(prefers-color-scheme: dark)').matches, scrollProgress: 0 };
         this.handleChange = this.handleChange.bind(this);
+        this.changeTheme(this.state.checked);
     }
 
     handleChange(checked: boolean) {
         this.setState({ checked });
-        const elt = document.getElementById('theme') as HTMLLinkElement;
-        elt.href = `https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/${checked ? 'darkly' : 'flatly'}/bootstrap.min.css`;
+        this.changeTheme(checked);
     }
+
+    changeTheme = (dark: boolean) => this.elt.href = `https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/${dark ? 'darkly' : 'flatly'}/bootstrap.min.css`
 
     scrollPercent(win: HTMLElement) {
         return (win.scrollTop / (win.scrollHeight - win.clientHeight) * 100);
