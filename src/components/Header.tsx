@@ -5,7 +5,7 @@ import Switch from 'react-switch'
 export default class Header extends Component<{}, { checked: boolean, scrollProgress: number }> {
     constructor(props: {}) {
         super(props);
-        this.state = { checked: true, scrollProgress: 0 };
+        this.state = { checked: matchMedia('(prefers-color-scheme: dark), (prefers-color-scheme: no-preference)').matches, scrollProgress: 0 };
         this.handleChange = this.handleChange.bind(this);
     }
 
@@ -13,13 +13,12 @@ export default class Header extends Component<{}, { checked: boolean, scrollProg
         this.setState({ checked });
         const elt = document.getElementById('theme');
         if (elt) elt.remove();
-        else this.createLight();
-        //(document.getElementById('theme') as HTMLLinkElement).href = `https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/${checked ? 'darkly' : 'litera'}/bootstrap.min.css`
+        this.createTheme(checked);
     }
 
-    createLight() {
+    createTheme(dark: boolean) {
         const pop = document.createElement('link');
-        pop.href = 'https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/litera/bootstrap.min.css';
+        pop.href = `https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/${dark ? 'darkly' : 'flatly'}/bootstrap.min.css`;
         pop.id = 'theme';
         pop.rel = 'stylesheet';
         pop.crossOrigin = 'anonymous';
