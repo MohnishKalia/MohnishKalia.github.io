@@ -11,18 +11,8 @@ export default class Header extends Component<{}, { checked: boolean, scrollProg
 
     handleChange(checked: boolean) {
         this.setState({ checked });
-        const elt = document.getElementById('theme');
-        if (elt) elt.remove();
-        this.createTheme(checked);
-    }
-
-    createTheme(dark: boolean) {
-        const pop = document.createElement('link');
-        pop.href = `https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/${dark ? 'darkly' : 'flatly'}/bootstrap.min.css`;
-        pop.id = 'theme';
-        pop.rel = 'stylesheet';
-        pop.crossOrigin = 'anonymous';
-        document.querySelector('head')?.append(pop);
+        const elt = document.getElementById('theme') as HTMLLinkElement;
+        elt.href = `https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/${checked ? 'darkly' : 'flatly'}/bootstrap.min.css`;
     }
 
     scrollPercent(win: HTMLElement) {
