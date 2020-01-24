@@ -4,16 +4,15 @@ import Card, { CardData } from './templates/Card';
 import Media, { MediaData } from './templates/Media';
 import Featurette from './templates/Featurette'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGraduationCap, faUniversity, faLayerGroup, faUser, IconDefinition } from '@fortawesome/free-solid-svg-icons'
+import { faGraduationCap, faUniversity, IconDefinition } from '@fortawesome/free-solid-svg-icons'
 import Cards from '../data/cards';
 import Profs from '../data/profs';
 
 const Main: React.FC = () =>
     <Container>
         {/* <Construction /> */}
-        <CardDeck />
         <Featurette>
-            <Iam />
+            <CardDeck />
         </Featurette>
         <Featurette>
             <Proficiencies />
@@ -68,7 +67,7 @@ export class CardDeck extends Component<{}, { cards: CardData[] }> {
             const cur = decks[index];
             cur.push(<Card data={card} key={card.title} />);
         }
-        return decks.map(arr => <div className="col-md-12 mb-4"><div className="card-deck">{arr}</div></div>);
+        return decks.map(arr => <div className="col-md-12"><div className="card-deck">{arr}</div></div>);
     }
 
     render() {
@@ -80,16 +79,7 @@ export class CardDeck extends Component<{}, { cards: CardData[] }> {
     }
 }
 
-export const Iam: React.FC = () =>
-    <div id="iam" className="row mb-4">
-        <Heading text="I Am..." />
-        <div className="col-md-12">
-            <ul className="list-group list-group-flush">
-                <Item heading="17 years old" description="Looking towards college and a career" icon={faUser} />
-                <Item heading="Full-stack developer" description="Hands on with MVC, MERN" icon={faLayerGroup} />
-            </ul>
-        </div>
-    </div>
+
 
 export class Proficiencies extends Component<{}, { profs: MediaData[] }> {
     constructor(props: {}) {

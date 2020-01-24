@@ -1,12 +1,37 @@
-/* footer {
-  color: #999;
-  text-align: center;
-  background-color: #f9f9f9;
-  border-top: .05rem solid #e5e5e5;
+body {
+  overflow-x: hidden;
 }
-footer p:last-child {
-  margin-bottom: 0;
-} */
-/* @import url("https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/darkly/bootstrap.min.css") (prefers-color-scheme: no-preference); */
-/* @import url("https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/darkly/bootstrap.min.css") (prefers-color-scheme: dark);
-@import url("https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/flatly/bootstrap.min.css") (prefers-color-scheme: light); */
+
+.navbar {
+  background: rgba(231,76,60,0.6)!important;
+}
+
+.carousel-inner > .carousel-item {
+  height: 100vh;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  right: 0;
+}
+.carousel-caption h1 {
+  font-size: 3rem;
+  text-shadow: 0.1rem 0.1rem 0.3rem black;
+}
+.carousel-caption p {
+  font-size: 1.5rem;
+  text-shadow: 0.1rem 0.1rem black;
+}
+
+.carousel-item:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.4);
+}
