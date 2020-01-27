@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGraduationCap, faUniversity, IconDefinition } from '@fortawesome/free-solid-svg-icons'
 import Cards from '../data/cards';
 import Profs from '../data/profs';
+import { Editor } from './Editor';
 
 const Main: React.FC = () =>
     <Container>
@@ -72,9 +73,12 @@ export class CardDeck extends Component<{}, { cards: CardData[] }> {
 
     render() {
         return (
-            <div id="cards" className="row">
-                {this.getDecks()}
-            </div>
+            <>
+                <div id="cards" className="row">
+                    {this.getDecks()}
+                </div>
+                <Editor />
+            </>
         )
     }
 }
