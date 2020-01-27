@@ -48,6 +48,7 @@ export class Editor extends React.Component<{}, { code: string, language: string
         const options = {
             selectOnLineNumbers: true
         };
+        const dark = (document.getElementById('theme') as HTMLLinkElement).href.includes('dark');
         return (
             <div className="row d-none d-md-block">
                 <div className="col-md-12">
@@ -59,13 +60,13 @@ export class Editor extends React.Component<{}, { code: string, language: string
                     </div>
                 </div>
                 <div className="col-md-12">
-                    <MonacoEditor
-                        height="30vh"
-                        theme="vs-dark"
-                        language={language}
-                        value={code}
-                        options={options}
-                    />
+                        <MonacoEditor
+                            height="30vh"
+                            theme={`vs${dark && '-dark'}`}
+                            language={language}
+                            value={code}
+                            options={options}
+                        />
                 </div>
             </div>
         );
