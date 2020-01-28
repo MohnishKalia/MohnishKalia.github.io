@@ -1,5 +1,6 @@
 import React from 'react';
 import MonacoEditor from 'react-monaco-editor';
+import ThemeContext from '../ThemeContext'
 
 export class Editor extends React.Component<{}, { code: string, language: string }> {
     constructor(props: {}) {
@@ -48,27 +49,30 @@ export class Editor extends React.Component<{}, { code: string, language: string
         const options = {
             selectOnLineNumbers: true
         };
-        const dark = (document.getElementById('theme') as HTMLLinkElement).href.includes('dark');
         return (
-            <div className="row d-none d-md-block">
-                <div className="col-md-12">
-                    <div className="input-group my-3">
-                        <input type="url" id="url" className="form-control" placeholder="Enter source URL here..." />
-                        <div className="input-group-append">
-                            <button className="btn btn-primary" onClick={this.getCode}>Fetch</button>
+            <ThemeContext.Consumer>
+                {([theme]) =>
+                    <div className="row d-none d-md-block">
+                        <div className="col-md-12">
+                            <div className="input-group my-3">
+                                <input type="url" id="url" className="form-control" placeholder="Enter source URL here..." />
+                                <div className="input-group-append">
+                                    <button className="btn btn-primary" onClick={this.getCode}>Fetch</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-md-12">
+                            <MonacoEditor
+                                height="30vh"
+                                theme={`vs${theme && '-dark'}`}
+                                language={language}
+                                value={code}
+                                options={options}
+                            />
                         </div>
                     </div>
-                </div>
-                <div className="col-md-12">
-                        <MonacoEditor
-                            height="30vh"
-                            theme={`vs${dark && '-dark'}`}
-                            language={language}
-                            value={code}
-                            options={options}
-                        />
-                </div>
-            </div>
+                }
+            </ThemeContext.Consumer>
         );
     }
 }

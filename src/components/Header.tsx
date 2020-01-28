@@ -6,22 +6,25 @@ import fullstack from '../images/fullstack.jpg'
 import bc from '../images/bc.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLayerGroup, faUser, faMicrochip, IconDefinition } from '@fortawesome/free-solid-svg-icons'
+import ThemeContext from '../ThemeContext'
 
-
-export default class Header extends Component<{}, { checked: boolean, scrollProgress: number }> {
+export default class Header extends Component<{}, { theme: boolean, scrollProgress: number }> {
 
     elt = document.getElementById('theme') as HTMLLinkElement;
+    static contextType = ThemeContext;
+    context!: React.ContextType<typeof ThemeContext>;
 
     constructor(props: {}) {
         super(props);
-        this.state = { checked: matchMedia('(prefers-color-scheme: dark)').matches, scrollProgress: 0 };
-        this.handleChange = this.handleChange.bind(this);
-        this.changeTheme(this.state.checked);
+        this.state = { theme: matchMedia('(prefers-color-scheme: dark)').matches, scrollProgress: 0 };
+        this.changeTheme(this.state.theme);
     }
 
-    handleChange(checked: boolean) {
-        this.setState({ checked });
-        this.changeTheme(checked);
+    handleChange = (theme: boolean) => {
+        this.setState({ theme });
+        this.changeTheme(theme);
+        const [, setTheme] = this.context;
+        setTheme(theme);
     }
 
     changeTheme = (dark: boolean) => this.elt.href = `https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/${dark ? 'darkly' : 'flatly'}/bootstrap.min.css`
@@ -35,7 +38,6 @@ export default class Header extends Component<{}, { checked: boolean, scrollProg
         const navbar = document.getElementById('navbar') as HTMLElement;
         body.setAttribute('data-offset', String(navbar.offsetHeight + 15));
         const win = document.documentElement;
-        // setInterval(() => this.setState({ scrollProgress: this.scrollPercent(win) }), 50);
         window.onscroll = () => this.setState({ scrollProgress: this.scrollPercent(win) });
     }
 
@@ -66,7 +68,7 @@ export default class Header extends Component<{}, { checked: boolean, scrollProg
                                     <a className="nav-item nav-link" href="#footer">Contact</a>
                                     <form className="form-inline">
                                         <span className="navbar-text ml-0 ml-sm-3 mr-3 font-weight-bold">Dark Mode</span>
-                                        <Switch onChange={this.handleChange} checked={this.state.checked} />
+                                        <Switch onChange={this.handleChange} checked={this.state.theme} />
                                     </form>
                                 </div>
                             </div>
