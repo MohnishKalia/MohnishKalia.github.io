@@ -1,5 +1,4 @@
 import React from 'react';
-import MonacoEditor from 'react-monaco-editor';
 import ThemeContext from '../ThemeContext'
 
 export class Editor extends React.Component<{}, { code: string, language: string }> {
@@ -61,7 +60,7 @@ export class Editor extends React.Component<{}, { code: string, language: string
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-12">
+                        {/* <div className="col-md-12">
                             <MonacoEditor
                                 height="30vh"
                                 theme={`vs${theme && '-dark'}`}
@@ -69,7 +68,7 @@ export class Editor extends React.Component<{}, { code: string, language: string
                                 value={code}
                                 options={options}
                             />
-                        </div>
+                        </div> */}
                     </div>
                 }
             </ThemeContext.Consumer>

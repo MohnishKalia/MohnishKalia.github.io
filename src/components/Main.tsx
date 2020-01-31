@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGraduationCap, faUniversity, IconDefinition } from '@fortawesome/free-solid-svg-icons'
 import Cards from '../data/cards';
 import Profs from '../data/profs';
-import { Editor } from './Editor';
 
 const Main: React.FC = () =>
     <Container>
@@ -20,7 +19,7 @@ const Main: React.FC = () =>
         </Featurette>
         <Education />
         {/* <Extra /> */}
-    </Container>
+    </Container >
 
 export default Main;
 
@@ -62,23 +61,20 @@ export class CardDeck extends Component<{}, { cards: CardData[] }> {
 
     getDecks() {
         const { cards } = this.state;
-        const decks: JSX.Element[][] = [[]];
+        const decks: JSX.Element[][] = [[], []];
         for (const [i, card] of cards.entries()) {
             const index = Math.floor(i / 3);
             const cur = decks[index];
             cur.push(<Card data={card} key={card.title} />);
         }
-        return decks.map(arr => <div className="col-md-12"><div className="card-deck">{arr}</div></div>);
+        return decks.map((arr, i) => <div className="col-md-12" key={i}><div className={`card-deck${i > 0 ? ' mt-md-4' : ''}`}>{arr}</div></div>);
     }
 
     render() {
         return (
-            <>
-                <div id="cards" className="row">
-                    {this.getDecks()}
-                </div>
-                <Editor />
-            </>
+            <div id="cards" className="row">
+                {this.getDecks()}
+            </div>
         )
     }
 }
