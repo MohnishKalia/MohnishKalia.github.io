@@ -31,7 +31,7 @@ const Cards: CardData[] = [
         type: 'repo',
         title: 'resCohost',
         repo: 'ResortCommerce',
-        description: 'A React eCommerce app for resorts.',
+        description: 'A React + React-Bootstrap eCommerce app for resorts.',
     },
     // {
     //     type: 'repo',
