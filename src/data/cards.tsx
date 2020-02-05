@@ -29,10 +29,16 @@ const Cards: CardData[] = [
     },
     {
         type: 'repo',
-        title: 'Todo App',
-        repo: 'NativeTodo',
-        description: 'A React Native app that emulates iOS Reminders.',
+        title: 'resCohost',
+        repo: 'ResortCommerce',
+        description: 'A React eCommerce app for resorts.',
     },
+    // {
+    //     type: 'repo',
+    //     title: 'Todo App',
+    //     repo: 'NativeTodo',
+    //     description: 'A React Native app that emulates iOS Reminders.',
+    // },
     {
         type: 'repo',
         title: 'Portfolio',
