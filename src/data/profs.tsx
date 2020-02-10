@@ -38,6 +38,18 @@ const Profs: MediaData[] = [
         confidence: 4,
     },
     {
+        type: 'webdevkit',
+        name: 'Bootstrap',
+        description: 'Agile and accessible templating, used in almost all my projects',
+        confidence: 4,
+    },
+    {
+        type: 'webdevkit',
+        name: 'Material Design',
+        description: 'Adapting Bootstrap 4 knowledge into Material (UI)',
+        confidence: 2,
+    },
+    {
         type: 'scripting',
         name: 'Python',
         description: 'Starting with web scrapers, file manipulation, algorithms',
@@ -45,9 +57,27 @@ const Profs: MediaData[] = [
     },
     {
         type: 'scripting',
-        name: 'Coming Soon',
-        description: 'This is not ready to be revealed yet...',
-        confidence: 5,
+        name: 'Bash',
+        description: 'Beginnning to automate file tasks with Linux/Unix',
+        confidence: 1,
+    },
+    // {
+    //     type: 'scripting',
+    //     name: 'Coming Soon',
+    //     description: 'This is not ready to be revealed yet...',
+    //     confidence: 5,
+    // },
+    {
+        type: 'softwaredev',
+        name: 'Git',
+        description: 'Using Git since the beginning of my CS education',
+        confidence: 3,
+    },
+    {
+        type: 'softwaredev',
+        name: 'Github',
+        description: 'All my work history is outlined on Github repos',
+        confidence: 4,
     },
 ]
 

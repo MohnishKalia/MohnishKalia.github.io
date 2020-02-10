@@ -10,15 +10,11 @@ import Profs from '../data/profs';
 
 const Main: React.FC = () =>
     <Container>
-        {/* <Construction /> */}
         <Featurette>
             <CardDeck />
         </Featurette>
-        <Featurette>
-            <Proficiencies />
-        </Featurette>
+        <Proficiencies />
         <Education />
-        {/* <Extra /> */}
     </Container >
 
 export default Main;
@@ -47,17 +43,10 @@ export const Construction: React.FC = () =>
     </div>
 
 export class CardDeck extends Component<{}, { cards: CardData[] }> {
-
     constructor(props: {}) {
         super(props);
         this.state = { cards: Cards };
     }
-
-    // async componentDidMount() {
-    //     const res = await fetch('./cards.json');
-    //     const cards = await res.json() as CardData[];
-    //     this.setState({ cards });
-    // }
 
     getDecks() {
         const { cards } = this.state;
@@ -87,32 +76,27 @@ export class Proficiencies extends Component<{}, { profs: MediaData[] }> {
         this.state = { profs: Profs };
     }
 
-    // async componentDidMount() {
-    //     const res = await fetch('./profs.json');
-    //     const profs = await res.json() as MediaData[];
-    //     this.setState({ profs });
-    // }
-
     getMedia(filter: string) {
         return this.state.profs.filter(media => media.type === filter).map(media => <Media data={media} key={media.name} />);
     }
 
     render() {
-        const be = 'backend', wd = 'webdevkit', sc = 'scripting';
+        const sections: { [id: string]: string } = {
+            'backend': 'Backend',
+            'webdevkit': 'Web Devkit',
+            'scripting': 'Scripting',
+            'softwaredev': 'Software Development',
+        }
         return (
             <div id="profs">
-                <div id={be} className="row">
-                    <Heading text="Backend" />
-                    {this.getMedia(be)}
-                </div>
-                <div id={wd} className="row">
-                    <Heading text="Web Devkit" />
-                    {this.getMedia(wd)}
-                </div>
-                <div id={sc} className="row">
-                    <Heading text="Scripting" />
-                    {this.getMedia(sc)}
-                </div>
+                {Object.keys(sections).map(key =>
+                    <Featurette key={key}>
+                        <div id={key} className="row">
+                            <Heading text={sections[key]} />
+                            {this.getMedia(key)}
+                        </div>
+                    </Featurette>
+                )}
             </div>
         )
     }
@@ -133,8 +117,9 @@ export const Extra: React.FC = () =>
     <div id="extra">
         <div className="jumbotron my-4">
             <h1 className="display-4">Hello, everybody!</h1>
-            <p className="lead">One of the most fun ways to manipulate a web page is by changing some key elements
-                        </p>
+            <p className="lead">
+                One of the most fun ways to manipulate a web page is by changing some key elements
+            </p>
             <hr />
             <p>If you wish, click the button below to change the tab's icon.</p>
             <p className="lead">

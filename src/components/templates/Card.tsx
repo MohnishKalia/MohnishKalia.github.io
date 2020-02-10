@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import ThemeContext from '../../ThemeContext';
 
 export type CardData = {
@@ -49,7 +49,6 @@ const Card: React.FC<{ data: CardData }> = (props) => {
                                                 src={`https://codesandbox.io/embed/github/MohnishKalia/${repo}${title === 'Portfolio' ? '/tree/dev' : ''}?codemirror=1&fontsize=12&view=editor&runonclick=1&theme=${theme ? 'dark' : 'light'}`}
                                                 style={{ border: 'none', width: '100%', height: '100%' }}
                                                 title={`${repo.replace(/\./g, '')}CSB`}
-                                                allow="payment fullscreen"
                                             ></iframe>
                                         </div>
                                         <div className="col-12 col-md-6">

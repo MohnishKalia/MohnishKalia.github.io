@@ -14,7 +14,7 @@ export default class Media extends Component<{ data: MediaData }> {
         const { name, description, confidence } = this.props.data;
         return (
             <div className="media my-4 col-md-6">
-                <Icon name={name} className="align-self-center mr-3" width="128" />
+                <Icon name={name} className="d-flex align-self-center justify-content-center mr-3" width="128px" />
                 <div className="media-body">
                     <h5 className="mt-0">{name}</h5>
                     {description && <p>{description}</p>}

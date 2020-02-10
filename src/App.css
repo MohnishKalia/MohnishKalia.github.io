@@ -3,7 +3,7 @@ body {
 }
 
 .navbar {
-  background: rgba(231,76,60,0.6)!important;
+  background: rgba(231, 76, 60, 0.6)!important;
 }
 
 .carousel-inner > .carousel-item {
@@ -33,5 +33,5 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
 }

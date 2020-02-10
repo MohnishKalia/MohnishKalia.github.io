@@ -61,6 +61,7 @@ export default class Header extends Component<{}, { theme: boolean, scrollProgre
                                             <a className="dropdown-item" href="#backend">Backend</a>
                                             <a className="dropdown-item" href="#webdevkit">Web Devkit</a>
                                             <a className="dropdown-item" href="#scripting">Scripting</a>
+                                            <a className="dropdown-item" href="#softwaredev">Software Development</a>
                                         </div>
                                     </div>
                                     <a className="nav-item nav-link" href="#edu">Education</a>
