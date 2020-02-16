@@ -74,7 +74,7 @@ export const ProgressBar = () => {
     const scrollPercent = (win: HTMLElement) => (win.scrollTop / (win.scrollHeight - win.clientHeight) * 100)
 
     body.setAttribute('data-offset', '80');
-    window.onscroll = () => setScrollProgress(scrollPercent(body));
+    window.onscroll = () => setScrollProgress(scrollPercent(document.documentElement));
 
     return (
         <div className="progress" style={{ height: "2px" }}>
