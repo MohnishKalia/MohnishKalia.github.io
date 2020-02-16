@@ -9,14 +9,15 @@ export type CardData = {
     notesPath?: string
 }
 
-const Card: React.FC<{ data: CardData }> = (props) => {
+const Card: React.FC<{ data: CardData }> = ({ data: { type, title, description, repo, notesPath } }) => {
     const headers = {
         repo: 'Repository',
         ref: 'Reference Notes',
         proj: 'Project'
     }
+
     const [theme] = React.useContext(ThemeContext);
-    const { type, title, description, repo, notesPath } = props.data;
+
     return (
         <>
             <div className="card">

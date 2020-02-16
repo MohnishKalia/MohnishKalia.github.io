@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container } from './templates/Bootstrap'
-import Card, { CardData } from './templates/Card';
-import Media, { MediaData } from './templates/Media';
+import Card from './templates/Card';
+import Media from './templates/Media';
 import Featurette from './templates/Featurette'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGraduationCap, faUniversity, IconDefinition } from '@fortawesome/free-solid-svg-icons'

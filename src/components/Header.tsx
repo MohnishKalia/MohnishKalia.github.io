@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLayerGroup, faUser, faMicrochip, IconDefinition } from '@fortawesome/free-solid-svg-icons'
 import ThemeContext from '../ThemeContext'
 
-const Header = () =>(
+const Header = () =>
     <div>
         <div className="fixed-top">
             <nav id="navbar" className="navbar navbar-expand-md navbar-dark">
@@ -68,7 +68,6 @@ export const DarkModeForm = () => {
 
 export const ProgressBar = () => {
     const body = document.querySelector('body') as HTMLElement;
-    const navbar = document.getElementById('navbar') as HTMLElement;
 
     const [scrollProgress, setScrollProgress] = useState(0);
 
