@@ -13,7 +13,7 @@ const Header = () =>
         <div className="fixed-top">
             <nav id="navbar" className="navbar navbar-expand-md navbar-dark">
                 <Container>
-                    <a className="navbar-brand" href="#">Mohnish Kalia</a>
+                    <a className="navbar-brand" href="#iam">Mohnish Kalia</a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -22,7 +22,7 @@ const Header = () =>
                             <a className="nav-item nav-link" href="#iam">I am...</a>
                             <a className="nav-item nav-link" href="#cards">Past Projects</a>
                             <div className="dropdown">
-                                <a className="nav-item nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Proficiencies</a>
+                                <a className="nav-item nav-link dropdown-toggle" data-toggle="dropdown" href="#/" role="button" aria-haspopup="true" aria-expanded="false">Proficiencies</a>
                                 <div className="dropdown-menu">
                                     <a className="dropdown-item" href="#backend">Backend</a>
                                     <a className="dropdown-item" href="#webdevkit">Web Devkit</a>
