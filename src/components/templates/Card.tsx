@@ -16,7 +16,6 @@ const Card: React.FC<{ data: CardData }> = ({ data: { type, title, description, 
         proj: 'Project'
     }
     const validRepo = repo !== 'IndividualWork' && repo !== 'DataStructures' && matchMedia('(min-width: 768px)').matches;
-    console.log(repo, validRepo)
     const [theme] = useContext(ThemeContext);
 
     const getName = (repo: string) => repo.replace(/\./g, '')
@@ -59,7 +58,7 @@ const Card: React.FC<{ data: CardData }> = ({ data: { type, title, description, 
                                         }
                                         <div className={`col-12${validRepo ? ' col-md-6' : ''}`}>
                                             <iframe
-                                                src={`https://mohnishkalia.github.io${title === 'Portfolio' ? '' : `/${repo}/index.html`}`}
+                                                src={`https://mohnishkalia.github.io${title === 'Portfolio' ? '' : `/${repo}`}`}
                                                 style={{ border: 'none', width: '100%', height: '70vh' }}
                                                 title={`${repo.replace(/\./g, '')}GHP`}
                                             ></iframe>
