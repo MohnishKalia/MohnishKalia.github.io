@@ -21,7 +21,9 @@ jobs:
       env:
         CI: true
     - name: Test Application
-      run: npm test
+      run: |
+        npm test
+        npm run build
     - name: Deploy to GH Pages
       run: |
         git config --global user.name "Mohnish Kalia"
