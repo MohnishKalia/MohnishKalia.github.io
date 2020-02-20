@@ -50,7 +50,7 @@ export const DarkModeForm = () => {
     const [theme, setTheme] = useState(matchMedia('(prefers-color-scheme: dark)').matches);
     const [, setContext] = useContext(ThemeContext);
 
-    const changeTheme = (dark: boolean) => elt.href = `https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/${dark ? 'darkly' : 'flatly'}/bootstrap.min.css`
+    const changeTheme = (dark: boolean) => { if (elt) elt.href = `https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/${dark ? 'darkly' : 'flatly'}/bootstrap.min.css` }
 
     changeTheme(theme);
 
