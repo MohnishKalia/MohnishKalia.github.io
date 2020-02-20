@@ -1,4 +1,4 @@
-name: Node.js CI
+name: The Great Leap Forward
 
 on:
   push:
@@ -20,6 +20,8 @@ jobs:
       run: npm install
       env:
         CI: true
+    - name: Test Application
+      run: npm test
     - name: Deploy to GH Pages
       run: |
         git config --global user.name "Mohnish Kalia"
