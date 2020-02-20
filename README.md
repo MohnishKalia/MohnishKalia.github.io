@@ -1,19 +1,17 @@
 # MohnishKalia.github.io
-
+![The Great Leap Forward](https://github.com/MohnishKalia/MohnishKalia.github.io/workflows/The%20Great%20Leap%20Forward/badge.svg)
 ---
 
-## Testing for this thing
+## Overview
 
-```[java]
-// This a really cool way of writing md
-Static var = new Static();
-System.out.println(var.toString());
-```
+This is a portfolio that combines React, Jest, Bootstrap, Node, and Github Actions into a full package.
 
-> This is an example of a `blockquote`
+## Additional Details
 
-However, a clear definition is required
+See the react build that is encompasses
+- Jest Unit Tests
+- Font Awesome
+- Bootstrap/swatch
+- CI/CD with GH action script
 
-1. This is a **really cool** thing to do
-2. It's *really simple*
-3. Not actually that bad
+> Mohnish Kalia, 2020
