@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [10.x]
+        node-version: [13.x]
     steps:
     - uses: actions/checkout@v1
     - name: Use Node.js ${{ matrix.node-version }}
@@ -22,5 +22,6 @@ jobs:
         CI: true
     - name: Deploy to GH Pages
       run: |
+        git config --global user.name "Mohnish Kalia"
         git config --global user.email "mohnish.kalia@gmail.com"
         npm run deploy
