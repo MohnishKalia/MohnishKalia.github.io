@@ -21,4 +21,7 @@ jobs:
     - name: Test App
       run: npm test
     - name: Deploy to GH Pages
-      run: npm run deploy
+      run: |
+        git config --global user.email "mohnish.kalia@gmail.com"
+        git config --global user.name "MohnishKalia"
+        npm run deploy
