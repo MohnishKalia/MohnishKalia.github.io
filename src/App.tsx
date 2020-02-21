@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import Header, { DarkModeForm } from './components/Header'
+import React, { useState, useContext } from 'react';
+import Header from './components/Header'
+import Switch from 'react-switch'
 import Main from './components/Main'
 import './App.css';
 import ThemeContext from './ThemeContext'
@@ -35,5 +36,27 @@ export const MainHeader = () =>
             </div>
         </div>
     </nav>
+
+export const DarkModeForm = () => {
+    const elt = document.getElementById('theme') as HTMLLinkElement;
+
+    const [theme, setTheme] = useState(matchMedia('(prefers-color-scheme: dark)').matches);
+    const [, setContext] = useContext(ThemeContext);
+
+    const changeTheme = (dark: boolean) => { if (elt) elt.href = `https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/${dark ? 'darkly' : 'flatly'}/bootstrap.min.css` }
+
+    changeTheme(theme);
+
+    return (
+        <form className="form-inline">
+            <span className="navbar-text ml-0 ml-sm-3 mr-3 font-weight-bold">Dark Mode</span>
+            <Switch onChange={theme => {
+                setTheme(theme);
+                changeTheme(theme);
+                setContext(theme);
+            }} checked={theme} />
+        </form>
+    );
+}
 
 export default App;

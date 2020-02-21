@@ -1,6 +1,4 @@
-import React, { useState, useContext } from 'react'
-import Switch from 'react-switch'
-import ThemeContext from '../ThemeContext'
+import React, { useState } from 'react'
 
 const Header = () =>
     <nav id="navbar" className="spiers d-md-none navbar navbar-expand-md navbar-dark p-md-0 py-2 fixed-top">
@@ -24,35 +22,12 @@ const Header = () =>
                     </div>
                     <a className="nav-item nav-link" href="#edu">Education</a>
                     <a className="nav-item nav-link" href="#footer">Contact</a>
-                    <DarkModeForm />
                 </div>
             </div>
         </div>
     </nav>
 
 export default Header;
-
-export const DarkModeForm = () => {
-    const elt = document.getElementById('theme') as HTMLLinkElement;
-
-    const [theme, setTheme] = useState(matchMedia('(prefers-color-scheme: dark)').matches);
-    const [, setContext] = useContext(ThemeContext);
-
-    const changeTheme = (dark: boolean) => { if (elt) elt.href = `https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/${dark ? 'darkly' : 'flatly'}/bootstrap.min.css` }
-
-    changeTheme(theme);
-
-    return (
-        <form className="form-inline">
-            <span className="navbar-text ml-0 ml-sm-3 mr-3 font-weight-bold">Dark Mode</span>
-            <Switch onChange={theme => {
-                setTheme(theme);
-                changeTheme(theme);
-                setContext(theme);
-            }} checked={theme} />
-        </form>
-    );
-}
 
 export const ProgressBar = () => {
     const body = document.querySelector('body') as HTMLElement;
