@@ -1,23 +1,62 @@
 import React, { useState } from 'react';
-import { Container } from './templates/Bootstrap'
+import tech from '../images/tech.jpg'
+import fullstack from '../images/fullstack.jpg'
+import bc from '../images/bc.jpg'
 import Card from './templates/Card';
 import Media from './templates/Media';
 import Featurette from './templates/Featurette'
+import Footer from './Footer'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGraduationCap, faUniversity, IconDefinition } from '@fortawesome/free-solid-svg-icons'
+import { faGraduationCap, faUniversity, faLayerGroup, faUser, faMicrochip, IconDefinition } from '@fortawesome/free-solid-svg-icons'
 import Cards from '../data/cards';
 import Profs from '../data/profs';
 
 const Main = () =>
-    <Container>
-        <Featurette>
-            <CardDeck />
-        </Featurette>
-        <Proficiencies />
-        <Education />
-    </Container >
+    <div className="col-md-9 ml-sm-auto col-lg-10 px-0">
+        <Iam />
+        <div className="container-md">
+            <Featurette>
+                <CardDeck />
+            </Featurette>
+            <Proficiencies />
+            <Education />
+            <Footer />
+        </div>
+    </div>
+
 
 export default Main;
+
+export const Iam = () =>
+    <div id="iam" className="carousel slide mb-5" data-ride="carousel">
+        <ol className="carousel-indicators">
+            <li data-target="#iam" data-slide-to={0} className="active" />
+            <li data-target="#iam" data-slide-to={1} />
+            <li data-target="#iam" data-slide-to={2} />
+        </ol>
+        <div className="carousel-inner">
+            <CarouselItem heading="17 years old" description="Aiming towards college and a career" icon={faUser} active={true} img={bc} />
+            <CarouselItem heading="Full-stack developer" description="Hands on with MVC, MERN" icon={faLayerGroup} active={false} img={fullstack} />
+            <CarouselItem heading="General tech enthusiast" description="Mobile, Embedded, RasPi" icon={faMicrochip} active={false} img={tech} />
+            <a className="carousel-control-prev" href="#iam" role="button" data-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true" />
+                <span className="sr-only">Previous</span>
+            </a>
+            <a className="carousel-control-next" href="#iam" role="button" data-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true" />
+                <span className="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+export const CarouselItem: React.FC<{ img: string, heading: string, description: string, icon: IconDefinition, active: boolean }> = ({ img, heading, description, icon, active }) =>
+    <div className={`carousel-item${active ? " active" : ""}`} style={{ backgroundImage: `url(${img})` }}>
+        <div className="carousel-caption">
+            <h1 className="font-weight-bold">{heading}</h1>
+            <p className="lead my-3">{description}</p>
+            <FontAwesomeIcon icon={icon} size={"4x"} fixedWidth />
+        </div>
+    </div>
 
 export const Heading: React.FC<{ text: string }> = ({ text }) => <h3 className="col-md-12">{text}</h3>
 
