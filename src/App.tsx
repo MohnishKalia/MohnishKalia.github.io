@@ -44,18 +44,17 @@ export const MainHeader = () =>
     </nav>
 
 export const DarkModeForm = () => {
-    const elt = document.getElementById('theme') as HTMLLinkElement;
-
-    const [context, setContext] = useContext(ThemeContext);
+    const [elt] = useState(document.getElementById('theme') as HTMLLinkElement);
+    const [dark, setDark] = useContext(ThemeContext);
 
     useEffect(() => {
-        if (elt) elt.href = `https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/${context ? 'darkly' : 'flatly'}/bootstrap.min.css`
-    }, [context, elt]);
+        if (elt) elt.href = `https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/${dark ? 'darkly' : 'flatly'}/bootstrap.min.css`
+    }, [dark, elt]);
 
     return (
         <form className="form-inline justify-content-center mt-auto">
             <span className="navbar-text ml-0 ml-sm-3 mr-3 font-weight-bold">Dark Mode</span>
-            <Switch onChange={theme => setContext(theme)} checked={context} />
+            <Switch onChange={theme => setDark(theme)} checked={dark} />
         </form>
     );
 }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { DarkModeForm } from '../App';
 
 const Header = () =>
     <nav id="navbar" className="spiers d-md-none navbar navbar-expand-md navbar-dark p-md-0 py-2 fixed-top">
@@ -22,6 +23,7 @@ const Header = () =>
                     </div>
                     <a className="nav-item nav-link" href="#edu">Education</a>
                     <a className="nav-item nav-link" href="#footer">Contact</a>
+                    <DarkModeForm />
                 </div>
             </div>
         </div>
