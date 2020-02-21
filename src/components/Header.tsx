@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { DarkModeForm } from '../App';
+import React from 'react'
+import { DarkModeForm } from '../Utils';
 
 const Header = () =>
     <nav id="navbar" className="spiers d-md-none navbar navbar-expand-md navbar-dark p-md-0 py-2 fixed-top">
@@ -30,23 +30,3 @@ const Header = () =>
     </nav>
 
 export default Header;
-
-export const ProgressBar = () => {
-    const body = document.querySelector('body') as HTMLElement;
-
-    const [scrollProgress, setScrollProgress] = useState(0);
-
-    const scrollPercent = (win: HTMLElement) => (win.scrollTop / (win.scrollHeight - win.clientHeight) * 100)
-
-    body.setAttribute('data-offset', '80');
-    window.onscroll = () => setScrollProgress(scrollPercent(document.documentElement));
-
-    return (
-        <div className="progress" style={{ height: "2px" }}>
-            <div className="progress-bar bg-success" role="progressbar" style={{
-                width: `${scrollProgress}%`,
-                transitionDuration: "0s"
-            }} aria-valuenow={scrollProgress} aria-valuemin={0} aria-valuemax={100}></div>
-        </div>
-    );
-}

@@ -14,7 +14,7 @@ import Profs from '../data/profs';
 const Main = () =>
     <div className="col-md-9 ml-sm-auto col-lg-10 px-0">
         <Iam />
-        <div className="container-md">
+        <div className="container">
             <Featurette>
                 <CardDeck />
             </Featurette>
