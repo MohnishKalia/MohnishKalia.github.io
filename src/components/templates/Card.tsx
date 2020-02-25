@@ -48,10 +48,11 @@ export const Modal: React.FC<{ data: CardData, getName: (repo: string) => string
                 break;
         }
         return valid;
-    }
+    };
     const validRepo = matchMedia('(min-width: 768px)').matches && checkBlacklist(repoBlacklist);
 
     const [theme] = useContext(ThemeContext);
+
 
     return createPortal(
         <div className="modal fade" id={`${getName(repo!)}Modal`} tabIndex={-1} role="dialog" aria-hidden="true">
