@@ -13,7 +13,7 @@ const MainHeader = () =>
             <NavItem icon={faBookmark} href="#iam" text="I am..." />
             <NavItem icon={faLaptopCode} href="#cards" text="Past Projects" />
             <div className="dropdown">
-                <FontAwesomeIcon icon={faIdCard} size={'3x'} />
+                <FontAwesomeIcon icon={faIdCard} size={'3x'} color="white"/>
                 <a className="nav-item nav-link dropdown-toggle" data-toggle="dropdown" href="#/" role="button" aria-haspopup="true" aria-expanded="false">Proficiencies</a>
                 <div className="dropdown-menu">
                     <a className="dropdown-item" href="#backend">Backend</a>
@@ -32,6 +32,6 @@ export default MainHeader;
 
 export const NavItem: React.FC<{ icon: IconDefinition, href: string, text: string }> = ({ icon, href, text }) =>
     <div className="position-relative">
-        <FontAwesomeIcon icon={icon} size={'3x'} />
+        <FontAwesomeIcon icon={icon} size={'3x'} color="white"/>
         <a className="nav-item nav-link stretched-link" href={href}>{text}</a>
     </div>

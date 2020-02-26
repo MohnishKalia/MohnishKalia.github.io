@@ -50,7 +50,12 @@ export const Iam = () =>
     </div>
 
 export const CarouselItem: React.FC<{ img: string, heading: string, description: string, icon: IconDefinition, active: boolean }> = ({ img, heading, description, icon, active }) =>
-    <div className={`carousel-item${active ? " active" : ""}`} style={{ backgroundImage: `url(${img})` }}>
+    <div className={`carousel-item${active ? " active" : ""}`} style={{
+        backgroundImage: `url(${img})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
+        backgroundPosition: 'center'
+    }}>
         <div className="carousel-caption">
             <h1 className="font-weight-bold">{heading}</h1>
             <p className="lead my-3">{description}</p>
