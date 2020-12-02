@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-import tech from '../images/tech.jpg'
-import fullstack from '../images/fullstack.jpg'
-import bc from '../images/bc.jpg'
 import Card from './templates/Card';
 import Media from './templates/Media';
 import Featurette from './templates/Featurette'
@@ -35,9 +32,9 @@ export const Iam = () =>
             <li data-target="#iam" data-slide-to={2} />
         </ol>
         <div className="carousel-inner">
-            <CarouselItem heading="17 years old" description="Aiming towards college and a career" icon={faUser} active={true} img={bc} />
-            <CarouselItem heading="Full-stack developer" description="Hands on with MVC, MERN" icon={faLayerGroup} active={false} img={fullstack} />
-            <CarouselItem heading="General tech enthusiast" description="Mobile, Embedded, RasPi" icon={faMicrochip} active={false} img={tech} />
+            <CarouselItem heading="17 years old" description="Aiming towards college and a career" icon={faUser} active={true} />
+            <CarouselItem heading="Full-stack developer" description="Hands on with MVC, MERN" icon={faLayerGroup} active={false} />
+            <CarouselItem heading="General tech enthusiast" description="Mobile, Embedded, RasPi" icon={faMicrochip} active={false} />
             <a className="carousel-control-prev" href="#iam" role="button" data-slide="prev">
                 <span className="carousel-control-prev-icon" aria-hidden="true" />
                 <span className="sr-only">Previous</span>
